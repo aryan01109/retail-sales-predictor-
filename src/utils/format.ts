@@ -1,0 +1,1 @@
+export const money=(n:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',maximumFractionDigits:1}).format(n);export const num=(n:number)=>new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(n);export const pct=(n:number)=>`${n.toFixed(1)}%`;

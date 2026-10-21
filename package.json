@@ -1,0 +1,9 @@
+{
+  "name": "retail-intelligence-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {"dev":"vite","build":"tsc -b && vite build","preview":"vite preview"},
+  "dependencies": {"@vitejs/plugin-react":"latest","framer-motion":"latest","lucide-react":"latest","react":"latest","react-dom":"latest","recharts":"latest","vite":"latest","typescript":"latest","tailwindcss":"latest","@tailwindcss/vite":"latest"},
+  "devDependencies": {}
+}

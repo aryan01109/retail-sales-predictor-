@@ -1,0 +1,152 @@
+/* ═══════════════════════════════════════════════════════════
+   Multi-Agent AI Background — Styles
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Layer 1: Base gradient ───────────────────────────────── */
+.ag-base-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, #0a1628 0%, transparent 70%),
+    radial-gradient(ellipse 100% 60% at 50% 100%, #070d1a 0%, transparent 70%),
+    linear-gradient(180deg, #030712 0%, #050B16 40%, #07101F 100%);
+}
+
+/* ─── Layer 2: Neural grid ─────────────────────────────────── */
+.ag-neural-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    /* Primary grid */
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    /* Secondary fine grid */
+    linear-gradient(rgba(139, 92, 246, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.012) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px;
+}
+
+/* Circuit accent — top-left corner */
+.ag-circuit {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.04;
+}
+.ag-circuit--tl {
+  top: 60px;
+  left: 260px; /* After sidebar */
+  background-image:
+    /* Horizontal line */
+    linear-gradient(90deg, transparent 10%, #3B82F6 10%, #3B82F6 60%, transparent 60%),
+    /* Vertical line */
+    linear-gradient(180deg, transparent 20%, #3B82F6 20%, #3B82F6 80%, transparent 80%);
+  background-size: 100% 1px, 1px 100%;
+  background-position: 0 50%, 50% 0;
+  background-repeat: no-repeat;
+}
+.ag-circuit--br {
+  bottom: 40px;
+  right: 40px;
+  background-image:
+    linear-gradient(90deg, transparent 40%, #8B5CF6 40%, #8B5CF6 90%, transparent 90%),
+    linear-gradient(180deg, transparent 30%, #8B5CF6 30%, #8B5CF6 70%, transparent 70%);
+  background-size: 100% 1px, 1px 100%;
+  background-position: 0 50%, 50% 0;
+  background-repeat: no-repeat;
+}
+
+/* ─── Layer 3: Ambient glow orbs ───────────────────────────── */
+.ag-ambient-layer {
+  position: absolute;
+  inset: 0;
+}
+.ag-orb {
+  position: absolute;
+  inset: 0;
+  transition: background 1.5s ease-out;
+}
+.ag-orb--1 {
+  animation: ag-drift-1 25s ease-in-out infinite alternate;
+}
+.ag-orb--2 {
+  animation: ag-drift-2 30s ease-in-out infinite alternate;
+}
+.ag-orb--3 {
+  animation: ag-drift-3 20s ease-in-out infinite alternate;
+}
+.ag-orb--4 {
+  animation: ag-drift-4 28s ease-in-out infinite alternate;
+}
+
+@keyframes ag-drift-1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(20px, 15px) scale(1.05); }
+  100% { transform: translate(-15px, 10px) scale(0.97); }
+}
+@keyframes ag-drift-2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-25px, -10px) scale(1.03); }
+  100% { transform: translate(10px, -20px) scale(0.98); }
+}
+@keyframes ag-drift-3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(15px, -15px) scale(1.04); }
+  100% { transform: translate(-10px, 5px) scale(0.96); }
+}
+@keyframes ag-drift-4 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-20px, 20px) scale(1.02); }
+  100% { transform: translate(15px, -5px) scale(0.99); }
+}
+
+/* ─── Layer 5: Vignette ────────────────────────────────────── */
+.ag-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%, transparent 50%, rgba(3, 7, 18, 0.4) 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Responsiveness
+   ═══════════════════════════════════════════════════════════ */
+
+/* Tablet — reduce grid density */
+@media (max-width: 1024px) {
+  .ag-neural-grid {
+    background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
+  }
+  .ag-circuit {
+    display: none;
+  }
+}
+
+/* Mobile — minimal background */
+@media (max-width: 640px) {
+  .ag-neural-grid {
+    background-image:
+      linear-gradient(rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .ag-orb--3,
+  .ag-orb--4 {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Accessibility — prefers-reduced-motion
+   ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .ag-orb {
+    animation: none !important;
+  }
+  .ag-vignette,
+  .ag-neural-grid,
+  .ag-ambient-layer {
+    /* Keep static, just remove motion */
+    animation: none !important;
+  }
+}
