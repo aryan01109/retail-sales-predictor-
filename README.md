@@ -147,7 +147,3 @@ Until the FastAPI backend is connected, the app uses a **client-side mock datase
 **Aryan Bhoya**
 L.D. College of Engineering, Ahmedabad
 GitHub: [@aryan01109](https://github.com/aryan01109)
-
-## 📄 License
-
-MIT License © 2026 Aryan Bhoya. See [LICENSE](./LICENSE).
