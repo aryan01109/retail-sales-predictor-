@@ -4,7 +4,7 @@ A production-style **React + TypeScript** analytics dashboard that forecasts ret
 
 🔗 **Live demo:** https://retail-sales-predictor-rw9w.vercel.app/
 
-![Dashboard screenshot](![Uploading Screenshot 2026-10-21 124029.png…]()
+![Dashboard screenshot]("C:\Users\Sai\OneDrive\Pictures\Screenshots\Screenshot 2026-10-21 124029.png"
 )
 
 ---
